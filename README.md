@@ -87,7 +87,7 @@ Although this introduced a steeper learning curve, it provided a much stronger f
 
 ## 🤖 AI-Assisted Development
 
-As I expanded into technologies that were new to me—including **Next.js, TypeScript, API integration, and modern React development**—I incorporated **OpenAI Codex** into my workflow as an interactive learning resource.
+As I expanded into technologies that were new to me, including **Next.js, TypeScript, API integration, and modern React development**. I incorporated **OpenAI Codex** into my workflow as an interactive learning resource.
 
 Rather than replacing the development process, Codex helped me better understand unfamiliar concepts, troubleshoot implementation challenges, and explore different technical approaches while I continued building the application.
 
