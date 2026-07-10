@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f2ea;
+  --foreground: #102032;
+  --color-page: #f6f2ea;
+  --color-navy: #102032;
+  --color-slate: #536173;
+  --color-accent: #4f739d;
+  --color-accent-soft: #e6eef7;
+  --color-accent-text: #31557f;
+  --color-gold-soft: #f4ebd5;
+  --color-gold-faint: #fcf7ed;
+  --color-gold-text: #8a6731;
+  --color-border: #dfdfd8;
+  --color-muted: #f1eee8;
+  --color-alert: #9a4238;
+  --shadow-card: 0 12px 40px rgba(16, 32, 50, 0.06);
+  --shadow-card-hover: 0 18px 50px rgba(16, 32, 50, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-mono: "SFMono-Regular", "SF Mono", "Menlo", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background:
+    radial-gradient(circle at top right, rgba(244, 235, 213, 0.7), transparent 28%),
+    linear-gradient(180deg, #faf8f3 0%, var(--color-page) 22%, #f7f3eb 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+a,
+button,
+textarea,
+summary {
+  outline-color: var(--color-accent);
+}
+
+::selection {
+  background: rgba(79, 115, 157, 0.2);
+}
