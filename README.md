@@ -1,94 +1,196 @@
-# AI WorkLab
+# 🤖 AI WorkLab
 
-AI WorkLab is a polished Next.js application for scenario-based AI training. The current version focuses on construction professionals and includes a real server-side OpenAI evaluation path with a clearly labeled mock fallback for local development.
+Welcome to **AI WorkLab**, an interactive AI learning platform designed to help professionals develop practical AI skills through realistic workplace scenarios, guided coaching, and hands-on practice.
 
-## What is included
+Rather than focusing on AI theory alone, AI WorkLab encourages users to learn by doing. Each workshop presents a realistic workplace scenario where users practice writing prompts, receive AI-powered coaching, and improve their ability to communicate effectively with artificial intelligence.
 
-- Professional landing page, industry selection, construction overview, workshop overview, and scenario workspace
-- Typed local content for industries, workshops, scenarios, and skill framing
-- Secure server-side prompt evaluation through `/api/evaluate-prompt`
-- Deterministic mock evaluator preserved for development fallback
-- Client-side draft and progress persistence using `localStorage`
-- Focused validation, rate limiting, and automated tests around evaluation behavior
+---
 
-## Tech stack
+## ✨ About
 
-- Next.js App Router
-- TypeScript
-- Tailwind CSS
+AI WorkLab was designed and developed by **Danielle Dockery** as both a personal learning project and a long-term software platform.
+
+The goal of the project is to help professionals build confidence using AI in real workplace situations by providing interactive scenarios, personalized feedback, and practical exercises that mirror everyday business tasks.
+
+The platform is currently under active development, with additional industries, workshops, and learning features planned for future releases.
+
+---
+
+## 🎯 Project Vision
+
+Artificial intelligence is rapidly becoming part of nearly every profession, yet many people still struggle with one simple question:
+
+> **"How do I actually use AI effectively at work?"**
+
+AI WorkLab was created to answer that question.
+
+Instead of teaching how AI models work internally, the platform focuses on helping users develop practical workplace skills, including:
+
+- Writing more effective AI prompts
+- Communicating clearly with AI
+- Improving AI-generated work
+- Learning prompt strategies through guided practice
+- Building confidence using AI in professional environments
+
+Future workshops are planned for administrative professionals, healthcare, finance, customer service, real estate, and additional industries.
+
+---
+
+## 🧭 Current Features
+
+| Feature | Description |
+|---------|-------------|
+| **Interactive Scenarios** | Practice AI using realistic workplace situations |
+| **Prompt Composer** | Write prompts directly within the application |
+| **AI Evaluation Engine** | Receive personalized coaching powered by the OpenAI API |
+| **Prompt Improvement** | Compare your original prompt with an improved version |
+| **Generated Workplace Output** | View the response your prompt would realistically produce |
+| **Progress Foundation** | Built with future progress tracking and skill development in mind |
+
+---
+
+## 🧠 Technology Stack
+
+### Frontend
+
+- Next.js
 - React
-- Lucide React
-- OpenAI JavaScript SDK
-- Zod
-- Vitest
-- ESLint
+- TypeScript
+- CSS
 
-## Local setup
+### Backend
 
-1. Install dependencies:
+- Next.js API Routes
+- OpenAI Responses API
+
+### Development Tools
+
+- Visual Studio Code
+- Git
+- GitHub
+- Node.js
+- npm
+
+---
+
+## 💻 Why TypeScript?
+
+AI WorkLab originally began as a simple HTML concept while I explored the overall idea and user experience.
+
+As the project evolved, it became clear that a traditional HTML website would not support the level of interactivity required for features such as reusable components, dynamic routing, server-side API integration, and AI-powered evaluations.
+
+For that reason, I transitioned the project to **Next.js, React, and TypeScript**.
+
+Although this introduced a steeper learning curve, it provided a much stronger foundation for building a scalable, production-style web application that can continue to grow over time.
+
+---
+
+## 🤖 AI-Assisted Development
+
+As I expanded into technologies that were new to me—including **Next.js, TypeScript, API integration, and modern React development**—I incorporated **OpenAI Codex** into my workflow as an interactive learning resource.
+
+Rather than replacing the development process, Codex helped me better understand unfamiliar concepts, troubleshoot implementation challenges, and explore different technical approaches while I continued building the application.
+
+Throughout development, I remained responsible for the project's architecture, feature planning, interface design, testing, debugging, implementation decisions, and overall product direction.
+
+---
+
+## 🚀 Local Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/dockdn/AI-WorkLab.git
+cd AI-WorkLab
+```
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-2. Create `.env.local`.
-3. Add your server-side environment variables:
+Create a local environment file:
 
-```bash
-OPENAI_API_KEY=your_key_here
-OPENAI_MODEL=gpt-4.1-mini
+```text
+.env.local
 ```
 
-`OPENAI_MODEL` is optional. If you omit it, the app falls back to `gpt-4.1-mini`.
+Add your OpenAI configuration:
 
-4. Start the development server:
+```text
+OPENAI_API_KEY=your_api_key_here
+OPENAI_MODEL=gpt-5-mini
+```
+
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+The application will be available at:
 
-If `OPENAI_API_KEY` is missing in local development, the app intentionally uses clearly labeled `Prototype feedback` from the mock evaluator instead of silently pretending the result came from the live API.
-
-## Verification
-
-```bash
-npm run test
-npm run lint
-npm run build
+```
+http://localhost:3000
 ```
 
-The build script uses webpack mode for compatibility in restricted environments.
+---
 
-## Important files
+## 🌱 Roadmap
 
-- `src/app/practice/construction/client-communication/1/page.tsx`: scenario workspace entry
-- `src/components/workspace/prompt-composer.tsx`: client submission flow and loading/error handling
-- `src/components/workspace/evaluation-panel.tsx`: shared evaluation UI for live and mock results
-- `src/app/api/evaluate-prompt/route.ts`: secure server-side evaluation route
-- `src/lib/evaluation/mock.ts`: deterministic development fallback evaluator
-- `src/lib/evaluation/validation.ts`: request validation
-- `src/lib/evaluation/rate-limit.ts`: isolated in-memory MVP rate limiter
-- `src/lib/evaluation/scenarios.ts`: trusted canonical scenario lookup and rubric
-- `src/lib/openai/client.ts`: server-only OpenAI client
-- `src/lib/openai/config.ts`: centralized model selection
-- `src/lib/openai/schema.ts`: strict structured-output schemas
-- `src/lib/openai/evaluate-prompt.ts`: OpenAI Responses API evaluation service
+### Version 1.0
 
-## Deployment
+- OpenAI-powered prompt coaching
+- Construction communication workshop
+- Interactive scenario workspace
+- AI prompt evaluation engine
 
-When deploying to Vercel, add `OPENAI_API_KEY` and optionally `OPENAI_MODEL` in the project’s Environment Variables settings. Do not commit secrets to GitHub.
+### Planned Features
 
-GitHub stores the source code. Vercel runs the server-side Next.js application, including the secure API route that reads the OpenAI environment variables.
+- Administrative Operations Workshop
+- Healthcare Workshop
+- Finance Workshop
+- Prompt Portfolio
+- Progress Dashboard
+- User Authentication
+- Company Workspaces
+- Certificates & Achievement Tracking
 
-## Costs
+---
 
-OpenAI API usage is billed separately based on the selected model and token usage. Set billing limits with your provider account and monitor usage as you test and deploy.
+## 📚 What I Learned
 
-## Current limitations
+Developing AI WorkLab significantly expanded my experience with modern web development and software engineering concepts, including:
 
-- The in-memory rate limiter is suitable for development or a single instance only, not multi-instance production scale
-- No authentication or database yet
-- Progress is still stored only in the browser on the local machine
-- Only the first construction workshop and first scenario are interactive in this version
+- React component architecture
+- TypeScript
+- Next.js App Router
+- REST API development
+- Environment variable management
+- OpenAI API integration
+- JSON validation
+- Git version control
+- Debugging complex application workflows
+
+This project also strengthened my understanding of iterative software development by starting with a functional prototype, identifying limitations through testing, and continuously refining the application as new features were introduced.
+
+---
+
+## 🌸 Project Status
+
+AI WorkLab is an actively evolving project that continues to grow with each release.
+
+Future versions will expand beyond construction into additional industries while introducing richer coaching experiences, progress tracking, personalized learning paths, and collaborative business features.
+
+---
+
+## 💌 Connect
+
+If you'd like to connect, collaborate, or discuss software development, AI, or future opportunities:
+
+📧 **danixielle@gmail.com**
+
+🔗 **LinkedIn**
+
+🐙 **GitHub**
